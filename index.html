@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Acesso ao sistema</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    a {
+      background: #6c63ff;
+      padding: 15px 25px;
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <a id="link" href="#" target="_blank">Acessar sistema</a>
+
+  <script>
+    fetch("ngrok-url.json")
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById("link").href = data.url;
+      });
+  </script>
+</body>
+</html>
